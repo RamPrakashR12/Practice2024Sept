@@ -27,16 +27,23 @@ public class repeatCharBasedOnNumbers {
 
 		for (; increment < lengthOfInput; increment++) {
 			char ch = inputValue.charAt(increment);
+
+			/*
+			 * Append the character to be printed repeatedly
+			 */
 			if (isAlphabet(ch)) {
 				repeatChar = repeatChar.append(ch);
 			}
 
+			/*
+			 * Sum up the count to which character to be printed repeatedly
+			 */
 			if (isNumber(ch)) {
 				repeatCount = repeatCount * 10 + (ch - '0');
 			}
 			/*
-			 * System.out.println("ch: " + ch); System.out.println("repeatChar: " +
-			 * repeatChar); System.out.println("repeatCount: " + repeatCount);
+			 * Print if both numbers and characters are collected already and next character
+			 * is new set of character again
 			 */
 			if ((repeatCount != 0) && (!(repeatChar.isEmpty())) && (increment < lengthOfInput - 1)) {
 
@@ -51,6 +58,10 @@ public class repeatCharBasedOnNumbers {
 			}
 
 		}
+
+		/*
+		 * Print the last set of characters taken from string
+		 */
 		if ((repeatCount != 0) && (!(repeatChar.isEmpty())) && (increment == lengthOfInput)) {
 			for (int i = 1; i <= repeatCount; i++) {
 				System.out.print(repeatChar);
@@ -61,6 +72,9 @@ public class repeatCharBasedOnNumbers {
 
 	}
 
+	/*
+	 * Check if input character being passed is a number
+	 */
 	static boolean isNumber(char ch) {
 		int num = ch - '0';
 		if (num >= 0 && num <= 9) {
@@ -69,6 +83,9 @@ public class repeatCharBasedOnNumbers {
 		return false;
 	}
 
+	/*
+	 * Check if input character being passed is a alphabet
+	 */
 	static boolean isAlphabet(char ch) {
 		int num = ch - '0';
 		if (num >= 0 && num <= 9) {
