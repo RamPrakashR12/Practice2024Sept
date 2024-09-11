@@ -1,3 +1,12 @@
+/*
+Input :
+version1 : 1.2.03.045
+version2 : 1.2.03.044
+
+Output :
+It is a Downgrade
+
+*/
 package PracticeSept01_01;
 
 import java.util.Scanner;
